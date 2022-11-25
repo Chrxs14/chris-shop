@@ -22,33 +22,37 @@ const Header = () => {
           </Link>
           <ul>
             <li>
-              <a href="/">All</a>
+              <Link href="/">All</Link>
             </li>
             <li>
-              <a href="/">Clothes</a>
+              <Link href="/">Clothes</Link>
             </li>
             <li>
-              <a href="/">Electronics</a>
+              <Link href="/">Electronics</Link>
             </li>
             <li>
-              <a href="/">Furnitures</a>
+              <Link href="/">Furnitures</Link>
             </li>
             <li>
-              <a href="/">Toys</a>
+              <Link href="/">Toys</Link>
             </li>
             <li>
-              <a href="/">Others</a>
+              <Link href="/">Others</Link>
             </li>
           </ul>
         </div>
         <div className={`${styles['navbar-right']}`}>
           <ul>
-            <li className={`${styles['more-clickable-area']} ${styles['navbar-email']} ${styles.pointer}`} onClick={() => toggleMenu()}>
-              platzi@example.com
+            <li>
+              <div onClick={() => toggleMenu()} role="button" tabIndex={0} onKeyPress={() => {}} className={`${styles['more-clickable-area']} ${styles['navbar-email']} ${styles.pointer}`}>
+                platzi@example.com
+              </div>
             </li>
-            <li className={`${styles['navbar-shopping-cart']}`} onClick={() => toggleOrder()}>
-              <Image className={`${styles['more-clickable-area']} ${styles.pointer}`} src={shoppingCart} alt="shopping cart" />
-              {state.cart.length > 0 ? <div>{state.cart.length}</div> : null}
+            <li>
+              <div onClick={() => toggleOrder()} role="button" tabIndex={0} onKeyPress={() => {}} className={`${styles['navbar-shopping-cart']}`}>
+                <Image className={`${styles['more-clickable-area']} ${styles.pointer}`} src={shoppingCart} alt="shopping cart" />
+                {state.cart.length > 0 ? <div className={styles['number-Color']}>{state.cart.length}</div> : null}
+              </div>
             </li>
           </ul>
         </div>

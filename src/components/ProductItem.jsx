@@ -15,20 +15,22 @@ const ProductItem = ({ product }) => {
 
   return (
     <div className={styles.ProductItem}>
-      <Image loader={() => product.images[0]} src={product.images[0]} alt={product.title} width={100} height={100} layout="responsive" />
+      <Image className={styles['img-item']} loader={() => product.images[0]} src={product.images[0]} alt={product.title} width={100} height={100} layout="responsive" />
 
       <div className={styles['product-info']}>
         <div>
           <p>${product.price}</p>
           <p>{product.title}</p>
         </div>
-        <figure className={`${styles['more-clickable-area']}`} onClick={() => handleClick(product)}>
-          {state.cart.includes(product) ? (
-            <Image className={`${styles['disabled add-to-cart-btn']}`} src={addedToCartImage} alt="added to cart" />
-          ) : (
-            <Image className={styles['add-to-cart-btn pointer']} src={addToCartImage} alt="add to cart" />
-          )}
-        </figure>
+        <div className={styles['div-figure']} onClick={() => handleClick(product)} role="button" tabIndex="0" onKeyPress={() => {}}>
+          <figure className={`${styles['more-clickable-area']}`}>
+            {state.cart.includes(product) ? (
+              <Image className={`${styles['disabled add-to-cart-btn']}`} src={addedToCartImage} alt="added to cart" />
+            ) : (
+              <Image className={styles['add-to-cart-btn pointer']} src={addToCartImage} alt="add to cart" />
+            )}
+          </figure>
+        </div>
       </div>
     </div>
   );

@@ -9,7 +9,7 @@
   position: fixed;
   top: 0;
   background: white;
-  width: 100%;
+  width: 100vw;
 }
 .menu {
   display: none;
@@ -36,7 +36,7 @@
   margin-left: 12px;
 }
 .navbar-left ul li a,
-.navbar-right ul li a {
+.navbar-right ul li div {
   text-decoration: none;
   color: $--very-light-pink;
   border: 1px solid $--white;
@@ -44,7 +44,7 @@
   border-radius: 8px;
 }
 .navbar-left ul li a:hover,
-.navbar-right ul li a:hover {
+.navbar-right ul li div:hover {
   border: 1px solid $--hospital-green;
   color: $--hospital-green;
 }
@@ -54,7 +54,10 @@
   margin-right: 12px;
 }
 .navbar-shopping-cart {
-  position: relative;
+  position: relative; 
+}
+.navbar-shopping-cart .number-Color{
+  color: black;
 }
 .navbar-shopping-cart div {
   width: 16px;
